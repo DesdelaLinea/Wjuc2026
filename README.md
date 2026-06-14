@@ -61,15 +61,6 @@ LICENSE             ← MIT License
 
 ---
 
-## 🚀 Despliegue
-
-1. Haz fork de este repositorio
-2. Configura Firebase (ver `SETUP.md`)
-3. Activa **GitHub Pages** desde `Settings → Pages → Branch: main → / (root)`
-4. La app estará en `https://TU_USUARIO.github.io/wjuc2026-predictor/`
-
----
-
 ## ⚙️ Panel Admin
 
 Accede desde la pestaña **⚙️ Admin** en la app.  
@@ -95,4 +86,4 @@ Desde el panel puedes:
 ## 📜 Licencia
 
 MIT © 2026 Desde La Línea  
-Puedes usar, modificar y distribuir libremente con atribución.
+No Puedes usar, modificar y distribuir libremente.
