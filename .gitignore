@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Backups exportados desde la app (no subir al repo)
+wjuc2026_backup_*.json
+wjuc2026_participantes_*.csv
+
+# Variables de entorno (si en algún momento se usan)
+.env
+.env.local
+.env.*.local
+
+# Dependencias (si se agregan en el futuro)
+node_modules/
