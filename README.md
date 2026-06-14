@@ -73,8 +73,6 @@ LICENSE             ← MIT License
 ## ⚙️ Panel Admin
 
 Accede desde la pestaña **⚙️ Admin** en la app.  
-La contraseña por defecto es `desdelalinea2026`.  
-**Cámbiala** antes del lanzamiento público (ver `SETUP.md`).
 
 Desde el panel puedes:
 - Ingresar resultados de partidos de grupos y bracket
