@@ -493,6 +493,21 @@ body.light .footer-dll-logo{filter:brightness(0);opacity:.75}
 .logo-wucc-light{display:none}
 body.light .logo-wucc-dark{display:none}
 body.light .logo-wucc-light{display:block}
+
+/* Spirit of the Game picks */
+.spirit-section{background:var(--surf1);border:1px solid rgba(255,220,50,.25);border-radius:var(--r2);padding:16px 20px;margin-bottom:16px}
+.spirit-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,220,50,.85);margin-bottom:4px}
+.spirit-subtitle{font-size:12px;color:var(--tx2);margin-bottom:14px;line-height:1.5}
+.spirit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.spirit-div-block{background:var(--surf2);border-radius:var(--r);padding:10px 12px}
+.spirit-div-label{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px}
+.spirit-div-label.open{color:rgba(34,211,238,.8)}
+.spirit-div-label.women{color:rgba(255,100,180,.8)}
+.spirit-div-label.mixed{color:rgba(100,210,120,.8)}
+.spirit-select{width:100%;background:var(--surf1);border:1px solid var(--borderl);border-radius:var(--r);padding:7px 9px;color:var(--tx1);font-size:12px;font-family:'DM Sans',sans-serif;outline:none;cursor:pointer;transition:border-color .15s}
+.spirit-select:focus{border-color:rgba(255,220,50,.5)}
+.spirit-pts{font-size:10px;color:rgba(255,220,50,.7);margin-top:5px;text-align:right;min-height:14px}
+@media(max-width:540px){.spirit-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -572,6 +587,89 @@ body.light .logo-wucc-light{display:block}
         </div>
       </div>
 
+    </div>
+  </div>
+
+
+  <!-- ✨ Spirit of the Game -->
+  <div class="spirit-section">
+    <div class="spirit-title">✨ Spirit of the Game — ¿Quién ganará el Spirit Award?</div>
+    <div class="spirit-subtitle">Elige el equipo más espirituoso por división · <strong>+15 pts</strong> por cada acierto · Los ganadores se anuncian al final del torneo</div>
+    <div class="spirit-grid">
+
+      <div class="spirit-div-block">
+        <div class="spirit-div-label open">⬡ OPEN</div>
+        <select class="spirit-select" id="spiritOpen" onchange="saveSpiritPick('Open',this.value)">
+<option value="">— Elige un equipo —</option>
+              <option value="USA">🇺🇸 (1) USA</option>
+              <option value="ITA">🇮🇹 (2) Italy</option>
+              <option value="CAN">🇨🇦 (3) Canada</option>
+              <option value="GER">🇩🇪 (4) Germany</option>
+              <option value="JPN">🇯🇵 (5) Japan</option>
+              <option value="FRA">🇫🇷 (6) France</option>
+              <option value="BEL">🇧🇪 (7) Belgium</option>
+              <option value="NZL">🇳🇿 (8) New Zealand</option>
+              <option value="CZE">🇨🇿 (9) Czech Republic</option>
+              <option value="COL">🇨🇴 (10) Colombia</option>
+              <option value="SGP">🇸🇬 (11) Singapore</option>
+              <option value="GBR">🇬🇧 (12) Great Britain</option>
+              <option value="SWE">🇸🇪 (13) Sweden</option>
+              <option value="ISR">🇮🇱 (14) Israel</option>
+              <option value="FIN">🇫🇮 (15) Finland</option>
+              <option value="IRL">🇮🇪 (16) Ireland</option>
+              <option value="RSA">🇿🇦 (17) South Africa</option>
+              <option value="NED">🇳🇱 (18) Netherlands</option>
+              <option value="ESP">🇪🇸 (19) Spain</option>
+        </select>
+        <div class="spirit-pts" id="spiritOpenPts"></div>
+      </div>
+
+      <div class="spirit-div-block">
+        <div class="spirit-div-label women">⬡ WOMEN'S</div>
+        <select class="spirit-select" id="spiritWomen" onchange="saveSpiritPick('Women',this.value)">
+<option value="">— Elige un equipo —</option>
+              <option value="ITA">🇮🇹 (1) Italy</option>
+              <option value="USA">🇺🇸 (2) USA</option>
+              <option value="FRA">🇫🇷 (3) France</option>
+              <option value="CAN">🇨🇦 (4) Canada</option>
+              <option value="NZL">🇳🇿 (5) New Zealand</option>
+              <option value="JPN">🇯🇵 (6) Japan</option>
+              <option value="CZE">🇨🇿 (7) Czech Republic</option>
+              <option value="BEL">🇧🇪 (8) Belgium</option>
+              <option value="COL">🇨🇴 (9) Colombia</option>
+              <option value="SGP">🇸🇬 (10) Singapore</option>
+              <option value="GER">🇩🇪 (11) Germany</option>
+              <option value="GBR">🇬🇧 (12) Great Britain</option>
+              <option value="ESP">🇪🇸 (13) Spain</option>
+              <option value="SWE">🇸🇪 (14) Sweden</option>
+        </select>
+        <div class="spirit-pts" id="spiritWomenPts"></div>
+      </div>
+
+      <div class="spirit-div-block">
+        <div class="spirit-div-label mixed">⬡ MIXED</div>
+        <select class="spirit-select" id="spiritMixed" onchange="saveSpiritPick('Mixed',this.value)">
+<option value="">— Elige un equipo —</option>
+              <option value="USA">🇺🇸 (1) USA</option>
+              <option value="CAN">🇨🇦 (2) Canada</option>
+              <option value="HUN">🇭🇺 (3) Hungary</option>
+              <option value="SGP">🇸🇬 (4) Singapore</option>
+              <option value="FRA">🇫🇷 (5) France</option>
+              <option value="COL">🇨🇴 (6) Colombia</option>
+              <option value="SUI">🇨🇭 (7) Switzerland</option>
+              <option value="AUS">🇦🇺 (8) Australia</option>
+              <option value="MEX">🇲🇽 (9) Mexico</option>
+              <option value="ESP">🇪🇸 (11) Spain</option>
+              <option value="AUT">🇦🇹 (12) Austria</option>
+              <option value="HKG">🇭🇰 (13) Hong Kong</option>
+              <option value="IRL">🇮🇪 (14) Ireland</option>
+        </select>
+        <div class="spirit-pts" id="spiritMixedPts"></div>
+      </div>
+
+    </div>
+    <div style="margin-top:10px;font-size:10px;color:var(--tx3)">
+      💾 Tus picks de Spirit se guardan junto con el resto de tus picks al pulsar "☁️ Guardar en leaderboard".
     </div>
   </div>
 
@@ -1009,12 +1107,12 @@ import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/1
 // ⚙️ Configuración → Tus apps → </> → firebaseConfig
 // ═══════════════════════════════════════════════════
 const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyAwZJT3c5Y1WW2wzcRjuhHRWXiSxrkGdok",
-  authDomain: "wjuc-2026.firebaseapp.com",
-  projectId: "wjuc-2026",
-  storageBucket: "wjuc-2026.firebasestorage.app",
-  messagingSenderId: "1070964155160",
-  appId: "1:1070964155160:web:18e652f26691f5f9fbb46d"
+  apiKey: "AIzaSyAPhggKAQxklGDmarci0Ij3tlm84RKG5Po",
+  authDomain: "wucc2026-pronostico.firebaseapp.com",
+  projectId: "wucc2026-pronostico",
+  storageBucket: "wucc2026-pronostico.firebasestorage.app",
+  messagingSenderId: "433959575984",
+  appId: "1:433959575984:web:d5d5a29fe103d988893675"
 };
 
 window._fbConnect = async (cfg) => {
