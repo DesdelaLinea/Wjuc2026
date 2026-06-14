@@ -5,7 +5,7 @@ Predictor interactivo para el **World Junior Ultimate Championships 2026**
 
 Creado por **Desde La Línea** — cobertura de Ultimate Frisbee en español.
 
-🔗 **App en vivo:** [desdelalinea.github.io/wjuc2026-predictor](https://desdelalinea.github.io/wjuc2026-predictor/)  
+🔗 **App en vivo:** [desdelalinea.github.io/wjuc2026-predictor](https://desdelalinea.github.io/Wjuc2026/)  
 📲 **Instagram:** [@desdelalinea](https://instagram.com/desdelalinea)  
 ☕ **Ko-fi:** [ko-fi.com/desdelalinea](https://ko-fi.com/desdelalinea)
 
