@@ -330,9 +330,9 @@ body.light .cfg-input,.light .name-input,.light .import-ta{background:var(--surf
 
 /* ── DIVISION COLORS ── */
 :root{
-  --open:#3B9EFF;--open-dim:rgba(59,158,255,.12);--open-border:rgba(59,158,255,.3);
-  --mixed:#B47CFF;--mixed-dim:rgba(180,124,255,.12);--mixed-border:rgba(180,124,255,.3);
-  --women:#FF6B9E;--women-dim:rgba(255,107,158,.12);--women-border:rgba(255,107,158,.3);
+  --open:#22D3EE;--open-dim:rgba(34,211,238,.12);--open-border:rgba(34,211,238,.3);
+  --mixed:#4DD98A;--mixed-dim:rgba(100,210,120,.12);--mixed-border:rgba(100,210,120,.3);
+  --women:#FF64B4;--women-dim:rgba(255,100,180,.12);--women-border:rgba(255,100,180,.3);
 }
 
 /* Division hero cards */
@@ -352,17 +352,17 @@ body.light .cfg-input,.light .name-input,.light .import-ta{background:var(--surf
 .div-hero.open{background:var(--open-dim);border-color:var(--open-border)}
 .div-hero.open::before{background:var(--open)}
 .div-hero.open .div-hero-name{color:var(--open)}
-.div-hero.open.on{border-color:var(--open);box-shadow:0 0 20px rgba(59,158,255,.2)}
+.div-hero.open.on{border-color:var(--open);box-shadow:0 0 20px rgba(34,211,238,.2)}
 
 .div-hero.mixed{background:var(--mixed-dim);border-color:var(--mixed-border)}
 .div-hero.mixed::before{background:var(--mixed)}
 .div-hero.mixed .div-hero-name{color:var(--mixed)}
-.div-hero.mixed.on{border-color:var(--mixed);box-shadow:0 0 20px rgba(180,124,255,.2)}
+.div-hero.mixed.on{border-color:var(--mixed);box-shadow:0 0 20px rgba(100,210,120,.2)}
 
 .div-hero.women{background:var(--women-dim);border-color:var(--women-border)}
 .div-hero.women::before{background:var(--women)}
 .div-hero.women .div-hero-name{color:var(--women)}
-.div-hero.women.on{border-color:var(--women);box-shadow:0 0 20px rgba(255,107,158,.2)}
+.div-hero.women.on{border-color:var(--women);box-shadow:0 0 20px rgba(255,100,180,.2)}
 
 /* Color the phase tabs per division */
 .picks-phasebar{display:flex;gap:3px;margin-bottom:18px;background:var(--surf1);
@@ -543,9 +543,7 @@ body.light .logo-wucc-light{display:block}
 <!-- PAGE: PICKS -->
 <div class="page on" id="page-picks">
 <div class="container">
-
-  <!-- Deadline Banner -->
-  <div id="deadlineBanner" class="deadline-banner open" style="margin-top:24px">
+<div id="deadlineBanner" class="deadline-banner open" style="margin-top:24px">
     <div class="dl-icon" id="dlIcon">⏳</div>
     <div class="dl-text">
       <div class="dl-title" id="dlTitle">Picks abiertos — cierre automático al inicio del torneo</div>
@@ -555,183 +553,7 @@ body.light .logo-wucc-light{display:block}
   </div>
 
 
-  <!-- WJUC 2024 Reference Card -->
-  <div style="background:var(--surf1);border:1px solid var(--border);border-radius:var(--r2);padding:12px 16px;margin-bottom:20px">
-    <div class="sec-label" style="padding-top:0;margin-bottom:10px;font-size:9px">📋 REFERENCIA WJUC 2024 · NOTTINGHAM · <a href="https://results.wfdf.sport/wjuc-2024/?view=teams&season=WJUC2024&list=bystandings" target="_blank" style="color:var(--lime)">resultados completos →</a></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
-
-      <!-- Open -->
-      <div style="background:var(--surf2);border-radius:var(--r);padding:8px 10px">
-        <div style="font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(34,211,238,.7);margin-bottom:6px">⬡ OPEN</div>
-        <div style="font-size:12px;line-height:1.8">
-          🥇 🇺🇸 USA<br>🥈 🇫🇷 Francia<br>🥉 🇨🇦 Canadá<br>
-          <span style="font-size:10px;color:rgba(255,220,50,.8)">✨ Spirit: 🇬🇧 GBR</span>
-        </div>
-      </div>
-
-      <!-- Women's -->
-      <div style="background:var(--surf2);border-radius:var(--r);padding:8px 10px">
-        <div style="font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(255,100,180,.7);margin-bottom:6px">⬡ WOMEN'S</div>
-        <div style="font-size:12px;line-height:1.8">
-          🥇 🇫🇷 Francia<br>🥈 🇺🇸 USA<br>🥉 🇮🇹 Italia<br>
-          <span style="font-size:10px;color:rgba(255,220,50,.8)">✨ Spirit: 🇦🇺 AUS</span>
-        </div>
-      </div>
-
-      <!-- Mixed -->
-      <div style="background:var(--surf2);border-radius:var(--r);padding:8px 10px">
-        <div style="font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(100,210,120,.7);margin-bottom:6px">⬡ MIXED</div>
-        <div style="font-size:12px;line-height:1.8">
-          🥇 🇺🇸 USA<br>🥈 🇨🇦 Canadá<br>🥉 🇭🇺 Hungría<br>
-          <span style="font-size:10px;color:rgba(255,220,50,.8)">✨ Spirit: 🇺🇸 USA</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- ✨ Spirit of the Game -->
-  <div class="spirit-section">
-    <div class="spirit-title">✨ Spirit of the Game — ¿Quién ganará el Spirit Award?</div>
-    <div class="spirit-subtitle">Elige el equipo más espirituoso por división · <strong>+15 pts</strong> por cada acierto · Los ganadores se anuncian al final del torneo</div>
-    <div class="spirit-grid">
-
-      <div class="spirit-div-block">
-        <div class="spirit-div-label open">⬡ OPEN</div>
-        <select class="spirit-select" id="spiritOpen" onchange="saveSpiritPick('Open',this.value)">
-<option value="">— Elige un equipo —</option>
-              <option value="USA">🇺🇸 (1) USA</option>
-              <option value="ITA">🇮🇹 (2) Italy</option>
-              <option value="CAN">🇨🇦 (3) Canada</option>
-              <option value="GER">🇩🇪 (4) Germany</option>
-              <option value="JPN">🇯🇵 (5) Japan</option>
-              <option value="FRA">🇫🇷 (6) France</option>
-              <option value="BEL">🇧🇪 (7) Belgium</option>
-              <option value="NZL">🇳🇿 (8) New Zealand</option>
-              <option value="CZE">🇨🇿 (9) Czech Republic</option>
-              <option value="COL">🇨🇴 (10) Colombia</option>
-              <option value="SGP">🇸🇬 (11) Singapore</option>
-              <option value="GBR">🇬🇧 (12) Great Britain</option>
-              <option value="SWE">🇸🇪 (13) Sweden</option>
-              <option value="ISR">🇮🇱 (14) Israel</option>
-              <option value="FIN">🇫🇮 (15) Finland</option>
-              <option value="IRL">🇮🇪 (16) Ireland</option>
-              <option value="RSA">🇿🇦 (17) South Africa</option>
-              <option value="NED">🇳🇱 (18) Netherlands</option>
-              <option value="ESP">🇪🇸 (19) Spain</option>
-        </select>
-        <div class="spirit-pts" id="spiritOpenPts"></div>
-      </div>
-
-      <div class="spirit-div-block">
-        <div class="spirit-div-label women">⬡ WOMEN'S</div>
-        <select class="spirit-select" id="spiritWomen" onchange="saveSpiritPick('Women',this.value)">
-<option value="">— Elige un equipo —</option>
-              <option value="ITA">🇮🇹 (1) Italy</option>
-              <option value="USA">🇺🇸 (2) USA</option>
-              <option value="FRA">🇫🇷 (3) France</option>
-              <option value="CAN">🇨🇦 (4) Canada</option>
-              <option value="NZL">🇳🇿 (5) New Zealand</option>
-              <option value="JPN">🇯🇵 (6) Japan</option>
-              <option value="CZE">🇨🇿 (7) Czech Republic</option>
-              <option value="BEL">🇧🇪 (8) Belgium</option>
-              <option value="COL">🇨🇴 (9) Colombia</option>
-              <option value="SGP">🇸🇬 (10) Singapore</option>
-              <option value="GER">🇩🇪 (11) Germany</option>
-              <option value="GBR">🇬🇧 (12) Great Britain</option>
-              <option value="ESP">🇪🇸 (13) Spain</option>
-              <option value="SWE">🇸🇪 (14) Sweden</option>
-        </select>
-        <div class="spirit-pts" id="spiritWomenPts"></div>
-      </div>
-
-      <div class="spirit-div-block">
-        <div class="spirit-div-label mixed">⬡ MIXED</div>
-        <select class="spirit-select" id="spiritMixed" onchange="saveSpiritPick('Mixed',this.value)">
-<option value="">— Elige un equipo —</option>
-              <option value="USA">🇺🇸 (1) USA</option>
-              <option value="CAN">🇨🇦 (2) Canada</option>
-              <option value="HUN">🇭🇺 (3) Hungary</option>
-              <option value="SGP">🇸🇬 (4) Singapore</option>
-              <option value="FRA">🇫🇷 (5) France</option>
-              <option value="COL">🇨🇴 (6) Colombia</option>
-              <option value="SUI">🇨🇭 (7) Switzerland</option>
-              <option value="AUS">🇦🇺 (8) Australia</option>
-              <option value="MEX">🇲🇽 (9) Mexico</option>
-              <option value="ESP">🇪🇸 (11) Spain</option>
-              <option value="AUT">🇦🇹 (12) Austria</option>
-              <option value="HKG">🇭🇰 (13) Hong Kong</option>
-              <option value="IRL">🇮🇪 (14) Ireland</option>
-        </select>
-        <div class="spirit-pts" id="spiritMixedPts"></div>
-      </div>
-
-    </div>
-    <div style="margin-top:10px;font-size:10px;color:var(--tx3)">
-      💾 Tus picks de Spirit se guardan junto con el resto de tus picks al pulsar "☁️ Guardar en leaderboard".
-    </div>
-  </div>
-
-  <!-- Score pills -->
-  <div class="score-pills">
-    <div class="s-pill">Partido grupos <b>+1 pt</b></div>
-    <div class="s-pill">Avanza a QF <b>+2 pts</b></div>
-    <div class="s-pill">Cuartos <b>+5 pts</b></div>
-    <div class="s-pill">Semis <b>+8 pts</b></div>
-    <div class="s-pill">Campeón <b>+13 pts</b></div>
-    <div class="s-pill">Spirit acertado <b>+15 pts × 3</b></div>
-    <div class="s-pill" style="margin-left:auto">Máx total <b>304 pts</b></div>
-  </div>
-
-  <!-- Registration -->
-  <div class="name-card">
-    <!-- Row 1: Nombre + País -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px">
-      <div style="display:flex;align-items:center;gap:8px">
-        <label style="white-space:nowrap;font-size:13px;color:var(--tx2);min-width:56px">Nombre:</label>
-        <input class="name-input" id="myName" placeholder="Tu nombre (visible en leaderboard)" oninput="onNameInput()" style="flex:1;min-width:0">
-      </div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <label style="white-space:nowrap;font-size:13px;color:var(--tx2);min-width:32px">País:</label>
-        <select class="name-input" id="myCountry" onchange="saveRegInfo()" style="flex:1;min-width:0;cursor:pointer;padding:9px 10px">
-          <option value="">— Selecciona —</option>
-        <option value="ARG">🇦🇷 Argentina</option><option value="AUS">🇦🇺 Australia</option>
-        <option value="AUT">🇦🇹 Austria</option><option value="BEL">🇧🇪 Belgium</option>
-        <option value="BRA">🇧🇷 Brasil</option><option value="CAN">🇨🇦 Canada</option>
-        <option value="CHI">🇨🇱 Chile</option><option value="CHN">🇨🇳 China</option>
-        <option value="COL">🇨🇴 Colombia</option><option value="CZE">🇨🇿 Czech Rep.</option>
-        <option value="ESP">🇪🇸 España</option><option value="FIN">🇫🇮 Finland</option>
-        <option value="FRA">🇫🇷 France</option><option value="GBR">🇬🇧 Great Britain</option>
-        <option value="GER">🇩🇪 Germany</option><option value="HKG">🇭🇰 Hong Kong</option>
-        <option value="HUN">🇭🇺 Hungary</option><option value="IRL">🇮🇪 Ireland</option>
-        <option value="ISR">🇮🇱 Israel</option><option value="ITA">🇮🇹 Italy</option>
-        <option value="JPN">🇯🇵 Japan</option><option value="MEX">🇲🇽 Mexico</option>
-        <option value="NED">🇳🇱 Netherlands</option><option value="NZL">🇳🇿 New Zealand</option>
-        <option value="RSA">🇿🇦 South Africa</option><option value="SGP">🇸🇬 Singapore</option>
-        <option value="SUI">🇨🇭 Switzerland</option><option value="SWE">🇸🇪 Sweden</option>
-        <option value="USA">🇺🇸 USA</option><option value="OTR">🌍 Otro</option>
-      </select>
-      </div>
-    </div>
-    <!-- Row 2: Email + Club -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px">
-      <div style="display:flex;align-items:center;gap:8px">
-        <label style="white-space:nowrap;font-size:13px;color:var(--tx2);min-width:56px">Email:</label>
-        <input class="name-input" id="myEmail" type="email" placeholder="Solo lo ve el admin" oninput="saveRegInfo()" style="flex:1;min-width:0">
-      </div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <label style="white-space:nowrap;font-size:13px;color:var(--tx2);min-width:32px">Club:</label>
-        <input class="name-input" id="myClub" type="text" placeholder="Tu club / equipo (opcional)" oninput="saveRegInfo()" style="flex:1;min-width:0" title="🏅 Premio al club con más puntos">
-      </div>
-    </div>
-    <span class="save-status" id="saveStatus" style="width:100%;font-size:11px;display:block">
-      Nombre, país y email requeridos · 🏅 Club: ranking por suma de puntos de todos sus jugadores
-    </span>
-  </div>
-
-
-  <!-- Help accordion -->
+<!-- Help accordion -->
   <div class="help-panel">
     <button class="help-toggle" onclick="this.classList.toggle('open')">
       <span>❓ ¿Cómo participar? / How to play?</span>
@@ -817,7 +639,181 @@ body.light .logo-wucc-light{display:block}
     </div>
   </div>
 
-  <!-- Division Hero Cards -->
+  <div class="name-card">
+    <!-- Row 1: Nombre + País -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <label style="white-space:nowrap;font-size:13px;color:var(--tx2);min-width:56px">Nombre:</label>
+        <input class="name-input" id="myName" placeholder="Tu nombre (visible en leaderboard)" oninput="onNameInput()" style="flex:1;min-width:0">
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <label style="white-space:nowrap;font-size:13px;color:var(--tx2);min-width:32px">País:</label>
+        <select class="name-input" id="myCountry" onchange="saveRegInfo()" style="flex:1;min-width:0;cursor:pointer;padding:9px 10px">
+          <option value="">— Selecciona —</option>
+        <option value="ARG">🇦🇷 Argentina</option><option value="AUS">🇦🇺 Australia</option>
+        <option value="AUT">🇦🇹 Austria</option><option value="BEL">🇧🇪 Belgium</option>
+        <option value="BRA">🇧🇷 Brasil</option><option value="CAN">🇨🇦 Canada</option>
+        <option value="CHI">🇨🇱 Chile</option><option value="CHN">🇨🇳 China</option>
+        <option value="COL">🇨🇴 Colombia</option><option value="CZE">🇨🇿 Czech Rep.</option>
+        <option value="ESP">🇪🇸 España</option><option value="FIN">🇫🇮 Finland</option>
+        <option value="FRA">🇫🇷 France</option><option value="GBR">🇬🇧 Great Britain</option>
+        <option value="GER">🇩🇪 Germany</option><option value="HKG">🇭🇰 Hong Kong</option>
+        <option value="HUN">🇭🇺 Hungary</option><option value="IRL">🇮🇪 Ireland</option>
+        <option value="ISR">🇮🇱 Israel</option><option value="ITA">🇮🇹 Italy</option>
+        <option value="JPN">🇯🇵 Japan</option><option value="MEX">🇲🇽 Mexico</option>
+        <option value="NED">🇳🇱 Netherlands</option><option value="NZL">🇳🇿 New Zealand</option>
+        <option value="RSA">🇿🇦 South Africa</option><option value="SGP">🇸🇬 Singapore</option>
+        <option value="SUI">🇨🇭 Switzerland</option><option value="SWE">🇸🇪 Sweden</option>
+        <option value="USA">🇺🇸 USA</option><option value="OTR">🌍 Otro</option>
+      </select>
+      </div>
+    </div>
+    <!-- Row 2: Email + Club -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <label style="white-space:nowrap;font-size:13px;color:var(--tx2);min-width:56px">Email:</label>
+        <input class="name-input" id="myEmail" type="email" placeholder="Solo lo ve el admin" oninput="saveRegInfo()" style="flex:1;min-width:0">
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <label style="white-space:nowrap;font-size:13px;color:var(--tx2);min-width:32px">Club:</label>
+        <input class="name-input" id="myClub" type="text" placeholder="Tu club / equipo (opcional)" oninput="saveRegInfo()" style="flex:1;min-width:0" title="🏅 Premio al club con más puntos">
+      </div>
+    </div>
+    <span class="save-status" id="saveStatus" style="width:100%;font-size:11px;display:block">
+      Nombre, país y email requeridos · 🏅 Club: ranking por suma de puntos de todos sus jugadores
+    </span>
+  </div>
+
+
+  <!-- WJUC 2024 Reference Card -->
+  <div style="background:var(--surf1);border:1px solid var(--border);border-radius:var(--r2);padding:12px 16px;margin-bottom:20px">
+    <div class="sec-label" style="padding-top:0;margin-bottom:10px;font-size:9px">📋 REFERENCIA WJUC 2024 · NOTTINGHAM · <a href="https://results.wfdf.sport/wjuc-2024/?view=teams&season=WJUC2024&list=bystandings" target="_blank" style="color:var(--lime)">resultados completos →</a></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+
+      <!-- Open -->
+      <div style="background:var(--surf2);border-radius:var(--r);padding:8px 10px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(34,211,238,.7);margin-bottom:6px">⬡ OPEN</div>
+        <div style="font-size:12px;line-height:1.8">
+          🥇 🇺🇸 USA<br>🥈 🇫🇷 Francia<br>🥉 🇨🇦 Canadá<br>
+          <span style="font-size:10px;color:rgba(255,220,50,.8)">✨ Spirit: 🇬🇧 GBR</span>
+        </div>
+      </div>
+
+      <!-- Women's -->
+      <div style="background:var(--surf2);border-radius:var(--r);padding:8px 10px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(255,100,180,.7);margin-bottom:6px">⬡ WOMEN'S</div>
+        <div style="font-size:12px;line-height:1.8">
+          🥇 🇫🇷 Francia<br>🥈 🇺🇸 USA<br>🥉 🇮🇹 Italia<br>
+          <span style="font-size:10px;color:rgba(255,220,50,.8)">✨ Spirit: 🇦🇺 AUS</span>
+        </div>
+      </div>
+
+      <!-- Mixed -->
+      <div style="background:var(--surf2);border-radius:var(--r);padding:8px 10px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(100,210,120,.7);margin-bottom:6px">⬡ MIXED</div>
+        <div style="font-size:12px;line-height:1.8">
+          🥇 🇺🇸 USA<br>🥈 🇨🇦 Canadá<br>🥉 🇭🇺 Hungría<br>
+          <span style="font-size:10px;color:rgba(255,220,50,.8)">✨ Spirit: 🇺🇸 USA</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Score pills -->
+  <div class="score-pills">
+    <div class="s-pill">Partido grupos <b>+1 pt</b></div>
+    <div class="s-pill">Avanza a QF <b>+2 pts</b></div>
+    <div class="s-pill">Cuartos <b>+5 pts</b></div>
+    <div class="s-pill">Semis <b>+8 pts</b></div>
+    <div class="s-pill">Campeón <b>+13 pts</b></div>
+    <div class="s-pill">Spirit acertado <b>+15 pts × 3</b></div>
+    <div class="s-pill" style="margin-left:auto">Máx total <b>304 pts</b></div>
+  </div>
+
+  <!-- ✨ Spirit of the Game -->
+  <div class="spirit-section">
+    <div class="spirit-title">✨ Spirit of the Game — ¿Quién ganará el Spirit Award?</div>
+    <div class="spirit-subtitle">Elige el equipo más espirituoso por división · <strong>+15 pts</strong> por cada acierto · Los ganadores se anuncian al final del torneo</div>
+    <div class="spirit-grid">
+
+      <div class="spirit-div-block">
+        <div class="spirit-div-label open">⬡ OPEN</div>
+        <select class="spirit-select" id="spiritOpen" onchange="saveSpiritPick('Open',this.value)">
+<option value="">— Elige un equipo —</option>
+              <option value="USA">🇺🇸 (1) USA</option>
+              <option value="ITA">🇮🇹 (2) Italy</option>
+              <option value="CAN">🇨🇦 (3) Canada</option>
+              <option value="GER">🇩🇪 (4) Germany</option>
+              <option value="JPN">🇯🇵 (5) Japan</option>
+              <option value="FRA">🇫🇷 (6) France</option>
+              <option value="BEL">🇧🇪 (7) Belgium</option>
+              <option value="NZL">🇳🇿 (8) New Zealand</option>
+              <option value="CZE">🇨🇿 (9) Czech Republic</option>
+              <option value="COL">🇨🇴 (10) Colombia</option>
+              <option value="SGP">🇸🇬 (11) Singapore</option>
+              <option value="GBR">🇬🇧 (12) Great Britain</option>
+              <option value="SWE">🇸🇪 (13) Sweden</option>
+              <option value="ISR">🇮🇱 (14) Israel</option>
+              <option value="FIN">🇫🇮 (15) Finland</option>
+              <option value="IRL">🇮🇪 (16) Ireland</option>
+              <option value="RSA">🇿🇦 (17) South Africa</option>
+              <option value="NED">🇳🇱 (18) Netherlands</option>
+              <option value="ESP">🇪🇸 (19) Spain</option>
+        </select>
+        <div class="spirit-pts" id="spiritOpenPts"></div>
+      </div>
+
+      <div class="spirit-div-block">
+        <div class="spirit-div-label women">⬡ WOMEN'S</div>
+        <select class="spirit-select" id="spiritWomen" onchange="saveSpiritPick('Women',this.value)">
+<option value="">— Elige un equipo —</option>
+              <option value="ITA">🇮🇹 (1) Italy</option>
+              <option value="USA">🇺🇸 (2) USA</option>
+              <option value="FRA">🇫🇷 (3) France</option>
+              <option value="CAN">🇨🇦 (4) Canada</option>
+              <option value="NZL">🇳🇿 (5) New Zealand</option>
+              <option value="JPN">🇯🇵 (6) Japan</option>
+              <option value="CZE">🇨🇿 (7) Czech Republic</option>
+              <option value="BEL">🇧🇪 (8) Belgium</option>
+              <option value="COL">🇨🇴 (9) Colombia</option>
+              <option value="SGP">🇸🇬 (10) Singapore</option>
+              <option value="GER">🇩🇪 (11) Germany</option>
+              <option value="GBR">🇬🇧 (12) Great Britain</option>
+              <option value="ESP">🇪🇸 (13) Spain</option>
+              <option value="SWE">🇸🇪 (14) Sweden</option>
+        </select>
+        <div class="spirit-pts" id="spiritWomenPts"></div>
+      </div>
+
+      <div class="spirit-div-block">
+        <div class="spirit-div-label mixed">⬡ MIXED</div>
+        <select class="spirit-select" id="spiritMixed" onchange="saveSpiritPick('Mixed',this.value)">
+<option value="">— Elige un equipo —</option>
+              <option value="USA">🇺🇸 (1) USA</option>
+              <option value="CAN">🇨🇦 (2) Canada</option>
+              <option value="HUN">🇭🇺 (3) Hungary</option>
+              <option value="SGP">🇸🇬 (4) Singapore</option>
+              <option value="FRA">🇫🇷 (5) France</option>
+              <option value="COL">🇨🇴 (6) Colombia</option>
+              <option value="SUI">🇨🇭 (7) Switzerland</option>
+              <option value="AUS">🇦🇺 (8) Australia</option>
+              <option value="MEX">🇲🇽 (9) Mexico</option>
+              <option value="ESP">🇪🇸 (11) Spain</option>
+              <option value="AUT">🇦🇹 (12) Austria</option>
+              <option value="HKG">🇭🇰 (13) Hong Kong</option>
+              <option value="IRL">🇮🇪 (14) Ireland</option>
+        </select>
+        <div class="spirit-pts" id="spiritMixedPts"></div>
+      </div>
+
+    </div>
+    <div style="margin-top:10px;font-size:10px;color:var(--tx3)">
+      💾 Tus picks de Spirit se guardan junto con el resto de tus picks al pulsar "☁️ Guardar en leaderboard".
+    </div>
+  </div>
+
   <div class="div-hero-row" id="picksDivHero">
     <div class="div-hero open on" onclick="setPicksDiv('Open')" id="heroOpen">
       <div class="div-hero-icon">🥏</div>
@@ -827,14 +823,6 @@ body.light .logo-wucc-light{display:block}
       <div class="hero-prog-txt" id="heroOpenProg">0 picks</div>
       <div class="hero-prog-bar"><div class="hero-prog-fill" id="heroOpenPFill" style="width:0%"></div></div>
     </div>
-    <div class="div-hero mixed" onclick="setPicksDiv('Mixed')" id="heroMixed">
-      <div class="div-hero-icon">🥏</div>
-      <div class="div-hero-name">MIXED</div>
-      <div class="div-hero-count">14 equipos · 2 grupos</div>
-      <div class="div-hero-flag" id="heroMixedFlag"></div>
-      <div class="hero-prog-txt" id="heroMixedProg">0 picks</div>
-      <div class="hero-prog-bar"><div class="hero-prog-fill" id="heroMixedPFill" style="width:0%"></div></div>
-    </div>
     <div class="div-hero women" onclick="setPicksDiv('Women')" id="heroWomen">
       <div class="div-hero-icon">🥏</div>
       <div class="div-hero-name">WOMEN'S</div>
@@ -842,6 +830,14 @@ body.light .logo-wucc-light{display:block}
       <div class="div-hero-flag" id="heroWomenFlag"></div>
       <div class="hero-prog-txt" id="heroWomenProg">0 picks</div>
       <div class="hero-prog-bar"><div class="hero-prog-fill" id="heroWomenPFill" style="width:0%"></div></div>
+    </div>
+    <div class="div-hero mixed" onclick="setPicksDiv('Mixed')" id="heroMixed">
+      <div class="div-hero-icon">🥏</div>
+      <div class="div-hero-name">MIXED</div>
+      <div class="div-hero-count">14 equipos · 2 grupos</div>
+      <div class="div-hero-flag" id="heroMixedFlag"></div>
+      <div class="hero-prog-txt" id="heroMixedProg">0 picks</div>
+      <div class="hero-prog-bar"><div class="hero-prog-fill" id="heroMixedPFill" style="width:0%"></div></div>
     </div>
   </div>
 
@@ -869,13 +865,10 @@ body.light .logo-wucc-light{display:block}
 
   <div id="picksGroups"></div>
   <div id="picksInter" style="display:none"></div>
-  <div id="picksBracket" style="display:none"></div>
+  <div id="picksBracket" style="display:none">
 
 </div>
-</div>
-
-<!-- PAGE: LEADERBOARD -->
-<div class="page" id="page-lb">
+</div><div class="page" id="page-lb">
 <div class="container" style="padding-top:28px">
   <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px">
     <div>
