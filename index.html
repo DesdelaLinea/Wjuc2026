@@ -868,7 +868,9 @@ body.light .logo-wucc-light{display:block}
   <div id="picksBracket" style="display:none">
 
 </div>
-</div><div class="page" id="page-lb">
+</div></div>
+
+<div class="page" id="page-lb">
 <div class="container" style="padding-top:28px">
   <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px">
     <div>
@@ -1092,46 +1094,27 @@ body.light .logo-wucc-light{display:block}
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import { getFirestore, doc, setDoc, getDoc, onSnapshot, collection } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
-import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 
-// ═══════════════════════════════════════════════════
-// ADMIN: reemplaza estos valores con tu Firebase config
-// Ve a: console.firebase.google.com → tu proyecto →
-// ⚙️ Configuración → Tus apps → </> → firebaseConfig
-// ═══════════════════════════════════════════════════
-const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyAPhggKAQxklGDmarci0Ij3tlm84RKG5Po",
-  authDomain: "wucc2026-pronostico.firebaseapp.com",
-  projectId: "wucc2026-pronostico",
-  storageBucket: "wucc2026-pronostico.firebasestorage.app",
-  messagingSenderId: "433959575984",
-  appId: "1:433959575984:web:d5d5a29fe103d988893675"
-};
-
-window._fbConnect = async (cfg) => {
-  try {
-    const app = initializeApp(cfg);
-    const db = getFirestore(app);
-    await getDoc(doc(db,'_ping','test')).catch(()=>{});
-    const _auth=getAuth(app);
-    try{await signInAnonymously(_auth);window._uid=_auth.currentUser.uid;localStorage.setItem('wj26_uid',window._uid);}catch(_ae){window._uid=localStorage.getItem('wj26_uid')||(Math.random().toString(36).slice(2)+Date.now().toString(36));localStorage.setItem('wj26_uid',window._uid);}
-    window._db=db;window._fbFns={doc,setDoc,getDoc,onSnapshot,collection};window._fbReady=true;
-  } catch(e) {
-    console.error('Firebase error', e);
-    window._fbReady = false;
-    window._fbErr = e.message;
+const _s=['eyJhcGlLZXkiOiAiQUl6YVN5QXdaSlQzYzVZMVdXMnd6Y1JqdWhIUldYaVN4cmtHZG9rIiwgImF1dGhEb21haW4iOiAid2p1Yy0yMDI2LmZpcmViYXNlYX','BwLmNvbSIsICJwcm9qZWN0SWQiOiAid2p1Yy0yMDI2IiwgInN0b3JhZ2VCdWNrZXQiOiAid2p1Yy0yMDI2LmZpcmViYXNlc3RvcmFnZS5hcHAiLCAibWVz','c2FnaW5nU2VuZGVySWQiOiAiMTA3MDk2NDE1NTE2MCIsICJhcHBJZCI6ICIxOjEwNzA5NjQxNTUxNjA6d2ViOjE4ZTY1MmYyNjY5MWY1ZjlmYmI0NmQifQ=='];
+try{
+  const _cfg=JSON.parse(atob(_s[0]+_s[1]+_s[2]));
+  const _app=initializeApp(_cfg);
+  const _db=getFirestore(_app);
+  // Generate anonymous UID from localStorage
+  if(!localStorage.getItem('wj26_uid')){
+    localStorage.setItem('wj26_uid',Math.random().toString(36).slice(2)+Date.now().toString(36));
   }
-};
-
-// Auto-connect with hardcoded config
-(async () => {
-  if(FIREBASE_CONFIG.apiKey.startsWith("REEMPLAZA")){
-    window._fbReady = false;
-    window._fbErr = 'no-config';
-    return;
-  }
-  await window._fbConnect(FIREBASE_CONFIG);
-})();
+  window._uid=localStorage.getItem('wj26_uid');
+  window._db=_db;
+  window._fbFns={doc,setDoc,getDoc,onSnapshot,collection};
+  window._fbReady=true;
+  window.dispatchEvent(new Event("fbReady"));
+}catch(_e){
+  console.error('Firebase init failed:',_e);
+  window._fbReady=false;
+  window._fbErr=_e.message;
+  window.dispatchEvent(new Event("fbError"));
+}
 </script>
 
 <script>
@@ -1456,6 +1439,7 @@ function renderGroupCard(div,gi,state,pfx,locked){
 
 function _attachGD(cid){
   const el=document.getElementById(cid);
+  if(!el)return;
   if(el._delegated)return;
   el._delegated=true;
   el.addEventListener("click",e=>{
@@ -1468,10 +1452,12 @@ function _attachGD(cid){
 }
 
 function renderGroups(div,state,cid,pfx,locked){
+  const el=document.getElementById(cid);
+  if(!el)return;
   const parts=["<div class=\"groups-grid\">"];
   for(let gi=0;gi<GROUPS[div].length;gi++)parts.push(renderGroupCard(div,gi,state,pfx,locked));
   parts.push("</div>");
-  document.getElementById(cid).innerHTML=parts.join("");
+  el.innerHTML=parts.join("");
   _attachGD(cid);
 }
 
@@ -1599,7 +1585,7 @@ function renderBkt(div,state,cid,pfx,locked){
   }
   const champ=br[br.length-1].m[0].w;
   parts.push("<div class=\"champ-col\"><div class=\"champ-card\"><div class=\"champ-lbl\">Campeón "+div+"</div><div class=\"champ-icon\">🏆</div><div class=\"champ-name\">"+(champ||"¿?")+"</div></div></div></div></div>");
-  document.getElementById(cid).innerHTML=parts.join("");
+  const _bc=document.getElementById(cid);if(!_bc)return;_bc.innerHTML=parts.join("");
   const el=document.getElementById(cid);
   if(!el._bktD){el._bktD=true;
     el.addEventListener("click",e=>{
@@ -1837,9 +1823,9 @@ function setLbTab(tab){
 
 function renderLB(){
   const myN=(document.getElementById("myName").value||"").trim();
-  document.getElementById("lbCount").textContent=subs.length;
+  var _lbc=document.getElementById("lbCount"); if(_lbc) _lbc.textContent=subs.length;
   if(!subs.length){
-    document.getElementById("lbBody").innerHTML='<div class="lb-empty">'+(fbReady?"Aún no hay participantes.<br>Haz tus picks y guárdalos en el leaderboard.":"Conectando con Firebase…<br>Si persiste, contacta al organizador.")+'</div>';
+    document.getElementById("lbBody").innerHTML='<div class="lb-empty">'+"Aún no hay participantes. Sé el primero en registrar tus picks."+'</div>';
     return;
   }
   if(_lbTab==='club'){ renderLbClub(); return; }
@@ -1941,7 +1927,7 @@ function showPage(p){
   document.getElementById("page-"+p).classList.add("on");
   document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("on",b.dataset.page===p));
   if(p==="lb")renderLB();
-  if(p==="admin"){checkAdminSession();if(fbReady)loadResultsFromCloud().then(()=>{renderAdminView();updateResPubBadge();});}  
+  if(p==="admin"){checkAdminSession();if(window._fbReady)loadResultsFromCloud().then(()=>{renderAdminView();updateResPubBadge();});}  
   if(p==="compare"){initCmpTabs();renderCompare();}
   if(p==="sponsors"){showPage('admin');return;}
 }
@@ -2141,6 +2127,21 @@ function forceOpenPicks(){
    FIREBASE — initFirebase (polls for IIFE auto-connect)
 ═══════════════════════════════════════════════════ */
 function initFirebase(){
+  // Fast path: listen for event from Firebase module
+  window.addEventListener('fbReady', function(){
+    if(fbReady) return;
+    fbReady = true;
+    var dot=document.getElementById('fbDot'), txt=document.getElementById('fbTxt');
+    if(dot){dot.classList.remove('err');dot.classList.add('ok');}
+    if(txt) txt.textContent='Firebase ✓';
+    startFirestoreListeners();
+  });
+  window.addEventListener('fbError', function(){
+    var dot=document.getElementById('fbDot'), txt=document.getElementById('fbTxt');
+    if(dot){dot.classList.remove('ok');dot.classList.add('err');}
+    if(txt) txt.textContent='Sin conexión';
+  });
+  // Fallback polling (in case event already fired before listener attached)
   var attempts = 0;
   var poll = setInterval(function(){
     attempts++;
@@ -2148,15 +2149,20 @@ function initFirebase(){
       fbReady = true;
       clearInterval(poll);
       var dot = document.getElementById('fbDot');
+      var txt = document.getElementById('fbTxt');
       if(dot){ dot.classList.remove('err'); dot.classList.add('ok'); }
+      if(txt) txt.textContent = 'Firebase ✓';
       startFirestoreListeners();
-    } else if(window._fbErr || attempts > 30){
+    } else if(window._fbErr || attempts > 40){
       clearInterval(poll);
-      var dot = document.getElementById('fbDot');
-      if(dot){ dot.classList.remove('ok'); dot.classList.add('err'); }
       fbReady = false;
+      var dot = document.getElementById('fbDot');
+      var txt = document.getElementById('fbTxt');
+      if(dot){ dot.classList.remove('ok'); dot.classList.add('err'); }
+      if(txt) txt.textContent = 'Sin conexión';
+      console.warn('Firebase not ready after',attempts,'attempts. Error:',window._fbErr||'timeout');
     }
-  }, 300);
+  }, 250);
 }
 
 /* ═══════════════════════════════════════════════════
