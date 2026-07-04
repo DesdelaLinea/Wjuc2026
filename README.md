@@ -59,22 +59,12 @@ LICENSE             ← MIT License
 - [Firebase Firestore](https://firebase.google.com/) — leaderboard en tiempo real
 - [GitHub Pages](https://pages.github.com/) — hosting gratuito
 
----
-
-## 🚀 Despliegue
-
-1. Haz fork de este repositorio
-2. Configura Firebase (ver `SETUP.md`)
-3. Activa **GitHub Pages** desde `Settings → Pages → Branch: main → / (root)`
-4. La app estará en `https://TU_USUARIO.github.io/wjuc2026-predictor/`
 
 ---
 
 ## ⚙️ Panel Admin
 
 Accede desde la pestaña **⚙️ Admin** en la app.  
-La contraseña por defecto es `desdelalinea2026`.  
-**Cámbiala** antes del lanzamiento público (ver `SETUP.md`).
 
 Desde el panel puedes:
 - Ingresar resultados de partidos de grupos y bracket
