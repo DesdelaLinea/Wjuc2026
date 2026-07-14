@@ -566,7 +566,7 @@ body.light .logo-wucc-light{display:block}
           <ul class="help-steps-list">
             <li><span class="hs-n">1</span><span>Escribe tu <strong>nombre</strong>, <strong>país</strong>, <strong>email</strong> y opcionalmente tu <strong>club</strong> — tu nombre será tu ID en el leaderboard.</span></li>
             <li><span class="hs-n">2</span><span>En la pestaña <strong>Mis Picks</strong>, elige un ganador por cada partido de grupos en las 3 divisiones: Open, Women's y Mixed.</span></li>
-            <li><span class="hs-n">3</span><span>Los <strong>top 2 de cada grupo</strong> avanzan al bracket. Escoge quién gana cada fase eliminatoria.</span></li>
+            <li><span class="hs-n">3</span><span>Los mejores de cada grupo avanzan (<strong>top 3 en Open → Power Pools, top 4 en Women's y Mixed → directo a Cuartos</strong>). Escoge quién gana cada fase eliminatoria: Cuartos, Semifinal y Final.</span></li>
             <li><span class="hs-n">4</span><span>En la sección <strong>✨ Spirit of the Game</strong>, elige qué equipo ganará el Spirit Award en cada división (+15 pts por acierto).</span></li>
             <li><span class="hs-n">5</span><span>Pulsa <strong>☁️ Guardar en leaderboard</strong> antes del <strong>11 de julio 2026 a las 9:00 AM hora España</strong>. ¡Tus picks quedan bloqueados!</span></li>
             <li><span class="hs-n">6</span><span>Sigue el torneo en vivo y revisa tu posición en el <strong>Leaderboard</strong>. Puedes filtrar por país, región LATAM o club.</span></li>
@@ -577,7 +577,7 @@ body.light .logo-wucc-light{display:block}
           <ul class="help-steps-list">
             <li><span class="hs-n">1</span><span>Enter your <strong>name</strong>, <strong>country</strong>, <strong>email</strong> and optionally your <strong>club</strong> — your name will be your leaderboard ID.</span></li>
             <li><span class="hs-n">2</span><span>In the <strong>Mis Picks</strong> tab, pick a winner for every group stage match across all 3 divisions: Open, Women's and Mixed.</span></li>
-            <li><span class="hs-n">3</span><span>The <strong>top 2 teams per group</strong> advance to the bracket. Pick your bracket winners through to the Final.</span></li>
+            <li><span class="hs-n">3</span><span>The best teams per group advance (<strong>top 3 in Open → Power Pools, top 4 in Women's and Mixed → straight to Quarterfinals</strong>). Pick your bracket winners through Quarterfinals, Semifinal and Final.</span></li>
             <li><span class="hs-n">4</span><span>In the <strong>✨ Spirit of the Game</strong> section, pick which team wins the Spirit Award in each division (+15 pts if correct).</span></li>
             <li><span class="hs-n">5</span><span>Click <strong>☁️ Save to leaderboard</strong> before <strong>July 11, 2026 at 9:00 AM Spain time</strong>. Your picks will be locked!</span></li>
             <li><span class="hs-n">6</span><span>Follow the tournament live and check your ranking. Filter by country, LATAM or club.</span></li>
@@ -593,7 +593,8 @@ body.light .logo-wucc-light{display:block}
             <div style="font-size:10px;font-weight:700;color:rgba(34,211,238,.8);margin-bottom:6px">⬡ OPEN — 19 equipos</div>
             <div style="font-size:11px;color:var(--tx2);line-height:1.7">
               4 grupos (A×4, B×5, C×5, D×5)<br>
-              Top 2 de cada grupo → QF (8 eq.)<br>
+              Top 3 de cada grupo → 2 Power Pools (6 eq.)<br>
+              Top 4 de cada Power Pool → QF (8 eq.)<br>
               QF → Semifinal → Final
             </div>
           </div>
@@ -601,16 +602,16 @@ body.light .logo-wucc-light{display:block}
             <div style="font-size:10px;font-weight:700;color:rgba(255,100,180,.8);margin-bottom:6px">⬡ WOMEN'S — 14 equipos</div>
             <div style="font-size:11px;color:var(--tx2);line-height:1.7">
               2 grupos de 7 equipos<br>
-              Top 2 de cada grupo → SF (4 eq.)<br>
-              Semifinal → Final
+              Top 4 de cada grupo → QF (8 eq.)<br>
+              QF → Semifinal → Final
             </div>
           </div>
           <div style="background:var(--surf2);border-radius:var(--r);padding:10px 12px">
             <div style="font-size:10px;font-weight:700;color:rgba(100,210,120,.8);margin-bottom:6px">⬡ MIXED — 14 equipos</div>
             <div style="font-size:11px;color:var(--tx2);line-height:1.7">
               2 grupos de 7 equipos<br>
-              Top 2 de cada grupo → SF (4 eq.)<br>
-              Semifinal → Final
+              Top 4 de cada grupo → QF (8 eq.)<br>
+              QF → Semifinal → Final
             </div>
           </div>
         </div>
@@ -624,13 +625,13 @@ body.light .logo-wucc-light{display:block}
           <div class="hs-row"><span>Avanza al bracket / Advances to bracket</span><b>+2 pts</b></div>
           <div class="hs-row"><span>Partido Power Pool (Open) / Power Pool match</span><b>+1 pt</b></div>
         <div class="hs-row"><span>Avanza a QF desde Power Pool / Advance to QF</span><b>+3 pts</b></div>
-        <div class="hs-row"><span>Cuartos de final (solo Open) / QF win (Open only)</span><b>+5 pts</b></div>
+        <div class="hs-row"><span>Cuartos de final (Open, Women's, Mixed) / QF win</span><b>+5 pts</b></div>
           <div class="hs-row"><span>Semifinal / Semifinal win</span><b>+8 pts</b></div>
           <div class="hs-row"><span>Campeón / Champion</span><b>+13 pts</b></div>
           <div class="hs-row"><span>Spirit of the Game (×3 divisiones)</span><b>+15 pts c/u</b></div>
           <div class="hs-row" style="background:rgba(34,211,238,.06)">
             <span style="color:var(--tx1);font-weight:600">Máximo total / Max total</span>
-            <b style="font-size:14px">304 pts</b>
+            <b style="font-size:14px">431 pts</b>
           </div>
         </div>
         <div style="margin-top:8px;font-size:10px;color:var(--tx3)">
@@ -1254,21 +1255,14 @@ const GROUPS={
 };
 
 /* ═══════════════════════════════════════════════════
-   STATE — WJUC 2026 (4 grupos → QF→SF→Final)
+   STATE — WJUC 2026 (Open: 4 grupos · Women/Mixed: 2 grupos → QF→SF→Final)
 ═══════════════════════════════════════════════════ */
 function lsGet(k,def){try{const v=localStorage.getItem(k);return v?JSON.parse(v):def;}catch{return def;}}
 function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{}}
 function mkMatches(n){const m=[];for(let i=0;i<n;i++)for(let j=i+1;j<n;j++)m.push({a:i,b:j,w:null});return m;}
 function mkBkt(div){
-  // Open: 4 groups → 8 advance → QF+SF+F
-  // Women/Mixed: 2 groups → 4 advance → SF+F only
-  var nGroups = (GROUPS[div]||[]).length;
-  if(nGroups<=2){
-    return[
-      {n:'Semifinal',m:[{a:null,b:null,w:null},{a:null,b:null,w:null}]},
-      {n:'Final',m:[{a:null,b:null,w:null}]}
-    ];
-  }
+  // Open: 19 eq. → 4 grupos → top 3 c/u a 2 Power Pools de 6 → top 4 c/u a QF (8 eq.) → QF+SF+F
+  // Women/Mixed: 2 grupos de 7 → top 4 c/u (8 eq.) → QF+SF+F (formato oficial WJUC 2026)
   return[
     {n:'Cuartos de Final',m:[{a:null,b:null,w:null},{a:null,b:null,w:null},{a:null,b:null,w:null},{a:null,b:null,w:null}]},
     {n:'Semifinal',m:[{a:null,b:null,w:null},{a:null,b:null,w:null}]},
@@ -1345,29 +1339,38 @@ function powerPoolStandings(interPool){
 
 function teamLabel(t){return fl(t.c)+' '+t.n;}
 
-// QF seeding: 1vD2, 2vC2, 3vB2, 4vA2 (cross-pool)
+// QF seeding:
+//  - Open (19 eq. → 4 grupos, top 3 c/u a 2 Power Pools de 6 → top 4 de cada Power Pool a QF): PP1-1vPP2-4 · PP2-2vPP1-3 · PP1-2vPP2-3 · PP2-1vPP1-4
+//  - Women/Mixed (2 grupos, top 4 c/u directo a QF): A1vB4 · B2vA3 · A2vB3 · B1vA4 (cross-pool, formato oficial WJUC 2026)
 function buildBkt(div,state){
   const br=state[div].bracket;
-  const W=[],R=[];
-  GROUPS[div].forEach((g,gi)=>{
-    const st=standings(g,state[div].g[gi]);
-    W.push(st[0]?teamLabel(st[0]):null);
-    R.push(st[1]?teamLabel(st[1]):null);
-  });
   const nGroups=GROUPS[div].length;
+  if(!br[0])return;
   if(nGroups<=2){
-    // 2 groups: W[0] vs R[1] in SF1, W[1] vs R[0] in SF2
-    if(!br[0])return;
-    br[0].m[0].a=W[0];br[0].m[0].b=R[1];br[0].m[0].w=null;
-    br[0].m[1].a=W[1];br[0].m[1].b=R[0];br[0].m[1].w=null;
-    if(br[1])br[1].m[0].a=null,br[1].m[0].b=null,br[1].m[0].w=null;
-  } else {
-    // 4 groups: cross QF seedings
-    const pairs=[[0,3],[1,2],[2,1],[3,0]];
-    pairs.forEach((p,i)=>{
-      if(!br[0]||!br[0].m[i])return;
-      br[0].m[i].a=W[p[0]];br[0].m[i].b=R[p[1]];br[0].m[i].w=null;
+    // 2 grupos de 7 → top 4 de cada uno avanzan a Cuartos (8 equipos)
+    const T=GROUPS[div].map((g,gi)=>{
+      const st=standings(g,state[div].g[gi]);
+      return[0,1,2,3].map(r=>st[r]?teamLabel(st[r]):null);
     });
+    const A=T[0]||[null,null,null,null], B=T[1]||[null,null,null,null];
+    br[0].m[0].a=A[0];br[0].m[0].b=B[3];br[0].m[0].w=null; // QF1: A1 vs B4
+    br[0].m[1].a=B[1];br[0].m[1].b=A[2];br[0].m[1].w=null; // QF2: B2 vs A3
+    br[0].m[2].a=A[1];br[0].m[2].b=B[2];br[0].m[2].w=null; // QF3: A2 vs B3
+    br[0].m[3].a=B[0];br[0].m[3].b=A[3];br[0].m[3].w=null; // QF4: B1 vs A4
+    for(let r=1;r<br.length;r++)br[r].m.forEach(m=>{m.a=null;m.b=null;m.w=null;});
+  } else {
+    // Open: 4 grupos iniciales → top 3 c/u a 2 Power Pools de 6 → top 4 de cada Power Pool avanza a Cuartos
+    buildOpenPowerPools(state);
+    const pp1=state.Open.inter&&state.Open.inter[0];
+    const pp2=state.Open.inter&&state.Open.inter[1];
+    const st1=pp1?powerPoolStandings(pp1):[];
+    const st2=pp2?powerPoolStandings(pp2):[];
+    const P1=[0,1,2,3].map(r=>st1[r]?teamLabel(st1[r]):null);
+    const P2=[0,1,2,3].map(r=>st2[r]?teamLabel(st2[r]):null);
+    br[0].m[0].a=P1[0];br[0].m[0].b=P2[3];br[0].m[0].w=null; // QF1: PP1-1 vs PP2-4
+    br[0].m[1].a=P2[1];br[0].m[1].b=P1[2];br[0].m[1].w=null; // QF2: PP2-2 vs PP1-3
+    br[0].m[2].a=P1[1];br[0].m[2].b=P2[2];br[0].m[2].w=null; // QF3: PP1-2 vs PP2-3
+    br[0].m[3].a=P2[0];br[0].m[3].b=P1[3];br[0].m[3].w=null; // QF4: PP2-1 vs PP1-4
     for(let r=1;r<br.length;r++)br[r].m.forEach(m=>{m.a=null;m.b=null;m.w=null;});
   }
 }
@@ -1396,14 +1399,16 @@ function scoreDiv(pS,rS,div){
       if(m.w!==null&&rm&&rm.w!==null&&m.w===rm.w)pts++;
     });
   });
-  // Group stage advancement: +2 per team correctly predicted in top 2
+  // Group stage advancement: +2 per team correctly predicted advancing
+  // Open: top 3 de cada grupo (→ Power Pools) · Women/Mixed: top 4 de cada grupo (→ Cuartos, formato oficial)
+  const advN=div==='Open'?3:4;
   G.forEach((g,gi)=>{
     if(!pS[div].g[gi]||!rS[div].g[gi])return;
-    const pT=standings(g,pS[div].g[gi]).slice(0,2).map(t=>t.s);
-    const rT=standings(g,rS[div].g[gi]).slice(0,2).map(t=>t.s);
+    const pT=standings(g,pS[div].g[gi]).slice(0,advN).map(t=>t.s);
+    const rT=standings(g,rS[div].g[gi]).slice(0,advN).map(t=>t.s);
     pT.forEach(s=>{if(rT.includes(s))pts+=2;});
   });
-  // Power Pool stage (Open only): +1 per correct match, +3 per team in top 2 of their Power Pool
+  // Power Pool stage (Open only): +1 per correct match, +3 per team in top 4 of their Power Pool
   if(div==='Open'&&pS.Open.inter&&rS.Open.inter){
     buildOpenPowerPools(pS);
     buildOpenPowerPools(rS);
@@ -1414,12 +1419,12 @@ function scoreDiv(pS,rS,div){
         var rm=rpp.m[mi];
         if(m.w!==null&&m.w!==undefined&&rm&&rm.w!==null&&rm.w!==undefined&&m.w===rm.w)pts++;
       });
-      // +3 per team correctly predicted top 2 in power pool (→ Quarterfinals)
-      if(pi<2){// Only top 2 Power Pools lead to Quarters
+      // +3 per team correctly predicted in top 4 of their Power Pool (→ Quarterfinals)
+      if(pi<2){// Solo las 2 pools "Playoff (1-8)" alimentan Cuartos; las otras 2 son pools de colocación (9-14)
         var pSt=powerPoolStandings(pp);
         var rSt=powerPoolStandings(rpp);
-        var pTop=pSt.slice(0,2).map(function(t){return t?t.s:null;}).filter(Boolean);
-        var rTop=rSt.slice(0,2).map(function(t){return t?t.s:null;}).filter(Boolean);
+        var pTop=pSt.slice(0,4).map(function(t){return t?t.s:null;}).filter(Boolean);
+        var rTop=rSt.slice(0,4).map(function(t){return t?t.s:null;}).filter(Boolean);
         pTop.forEach(function(s){if(rTop.includes(s))pts+=3;});
       }
     });
@@ -1438,19 +1443,20 @@ function maxScore(div){
   // Group stage matches (+1 each)
   GROUPS[div].forEach(g=>{const n=g.t.length;m+=n*(n-1)/2;});
   const nG=GROUPS[div].length;
-  const nAdv=nG*2;
-  // Group advancement bonus (+2 per team in top 2)
-  m+=nAdv*2;
   if(div==='Open'){
+    // Group advancement bonus: top 3 por grupo (+2 c/u) → avanzan a Power Pools
+    m+=(nG*3)*2;
     // Power Pool matches: Pool1(C(6,2)=15) + Pool2(C(6,2)=15) + Pool3(C(4,2)=6) + Pool4(C(3,2)=3) = 39 matches
     m+=15+15+6+3;
-    // Power Pool top-2 advancement bonus: 2 pools x 2 teams x 3pts = 12
-    m+=12;
+    // Power Pool top-4 advancement bonus (→ QF): 2 pools x 4 teams x 3pts = 24
+    m+=24;
     // QF(4x5) + SF(2x8) + Final(13)
     m+=20+16+13;
   } else {
-    // Women/Mixed: SF(2x8) + Final(13)
-    m+=16+13;
+    // Women/Mixed: Group advancement bonus: top 4 por grupo (+2 c/u) — formato oficial WJUC 2026
+    m+=(nG*4)*2;
+    // QF(4x5) + SF(2x8) + Final(13)
+    m+=20+16+13;
   }
   return m;
 }
@@ -1485,11 +1491,19 @@ function renderBracketView(div,state,cid,pfx,locked){
   buildBkt(div,state);
   const br=state[div].bracket,p=pfx||'';
   const rNames=['Cuartos de Final','Semifinal','Final'];
+  const nGroups=GROUPS[div].length;
+  let subText,seedLegend;
+  if(div==='Open'){
+    subText='Top 4 de cada Power Pool · 2 Power Pools (6 eq. c/u) → 8 equipos';
+    seedLegend='PP1-1 vs PP2-4 · PP2-2 vs PP1-3 · PP1-2 vs PP2-3 · PP2-1 vs PP1-4';
+  } else {
+    subText='Top 4 de cada grupo · '+nGroups+' grupos → 8 equipos';
+    seedLegend='A1vB4 · B2vA3 · A2vB3 · B1vA4';
+  }
   const parts=['<div class="bkt-info">',
     '<div><div class="bkt-title">Championship Bracket · '+div+'</div>',
-    '<div class="bkt-sub">Top 2 de cada grupo · '+GROUPS[div].length+' grupos → '+
-    (GROUPS[div].length*2)+' equipos</div></div>',
-    '<div style="font-size:11px;color:var(--tx3)">A1vD2 · B1vC2 · C1vB2 · D1vA2</div></div>',
+    '<div class="bkt-sub">'+subText+'</div></div>',
+    '<div style="font-size:11px;color:var(--tx3)">'+seedLegend+'</div></div>',
     '<div class="bkt-wrap"><div class="bracket">'];
   br.forEach((round,ri)=>{
     parts.push('<div class="b-round"><div class="b-rlbl">'+rNames[ri]+'</div><div class="b-slots">');
@@ -1527,13 +1541,14 @@ function renderGroupCard(div,gi,state,pfx,locked){
     const b22=h24d?`<span class="badge-22" title="WJUC 2024 ${h24d.m||''}${h24d.p}°">${h24d.m||''}${h24d.p}°</span>`:"";
     
     let rowCls,cut="",badge;
-    // WJUC format: top 2 per group always advance to bracket (QF or SF)
-    const advLabel = (GROUPS[div].length > 2) ? '▲ QF' : '▲ SF';
-    if(rank < 2){
+    // WJUC format: Open → top 3 por grupo avanzan a Power Pools; Women/Mixed → top 4 por grupo avanzan directo a Cuartos
+    const advN = div==='Open' ? 3 : 4;
+    const advLabel = div==='Open' ? '▲ Power Pool' : '▲ QF';
+    if(rank < advN){
       rowCls="s-row pp1";
       badge="<span class=\"s-badge badge-pp1\">"+advLabel+"</span>";
     } else {
-      if(rank === 2) cut = " s-cut-pp";
+      if(rank === advN) cut = " s-cut-pp";
       rowCls="s-row cons";
       badge="<span class=\"s-badge badge-cons\">▼ Placement</span>";
     }
@@ -1630,14 +1645,10 @@ function renderInter40(div,state,cid,pfx,locked){
 function renderBkt(div,state,cid,pfx,locked){
   const br=state[div].bracket;
   const p=pfx||"",lk=locked||false;
-  const is48=div!=="Women";
-  const rl48=["ROUND OF 32","ROUND OF 16","CUARTOS DE FINAL","SEMIFINAL","GRAN FINAL"];
-  const rl40=["PRE-CUARTOS","CUARTOS DE FINAL","SEMIFINAL","GRAN FINAL"];
-  const rl=is48?rl48:rl40;
-  const parts=["<div class=\"bkt-info\"><div><div class=\"bkt-title\">Championship Bracket · "+div+"</div><div class=\"bkt-sub\">"+(is48?"QF → SF → Final":"QF → SF → Final")+"</div></div></div><div class=\"bkt-wrap\"><div class=\"bracket\">"];
+  const parts=["<div class=\"bkt-info\"><div><div class=\"bkt-title\">Championship Bracket · "+div+"</div><div class=\"bkt-sub\">QF → SF → Final</div></div></div><div class=\"bkt-wrap\"><div class=\"bracket\">"];
   for(let ri=0;ri<br.length;ri++){
     const round=br[ri];
-    parts.push("<div class=\"b-round\"><div class=\"b-rlbl\">"+(rl[ri]||"RONDA")+"</div><div class=\"b-slots\">");
+    parts.push("<div class=\"b-round\"><div class=\"b-rlbl\">"+(round.n||"RONDA").toUpperCase()+"</div><div class=\"b-slots\">");
     for(let mi=0;mi<round.m.length;mi++){
       const m=round.m[mi];
       const at=!m.a,bt=!m.b,lkCls=lk?" locked":"";
@@ -2601,6 +2612,9 @@ function validateAndFixState(){
     if(!results[div]||!results[div].g||results[div].g.length!==expected){
       results[div]=mkDivState(div);
     }
+    if(!results[div].bracket||results[div].bracket.length!==mkBkt(div).length){
+      results[div].bracket=mkBkt(div);
+    }
     // Fix Open inter (power pools) if missing
     if(div==='Open'){
       if(!myPicks.Open.inter||myPicks.Open.inter.length!==OPEN_PLAYOFF_POOLS.length){
@@ -2756,7 +2770,7 @@ function initCmpTabs(){
   var c=document.getElementById('cmpDivTabs');if(!c||c.children.length)return;
   ['Open','Mixed','Women'].forEach(function(div){
     var b=document.createElement('button');b.className='div-tab'+(div==='Open'?' on':'');
-    b.textContent=div+' · '+(div==='Women'?'16':div==='Open'?'19':'16');
+    b.textContent=div+' · '+(div==='Open'?'19':'14');
     b.onclick=function(){cmpCurDiv=div;c.querySelectorAll('.div-tab').forEach(function(x){x.classList.toggle('on',x===b);});renderCompare();};
     c.appendChild(b);
   });
@@ -2792,8 +2806,10 @@ function renderCompare(){
 }
 function updateFormatDiagramJUC(div){
   var el=document.getElementById('formatDiagram');if(!el)return;
-  var n={Open:'19 selecciones',Mixed:'16 selecciones',Women:'16 selecciones'};
-  el.innerHTML='<div style="font-size:11px;color:var(--tx2);line-height:1.8">'+n[div]+' \u00b7 4 grupos (Round-Robin) \u2192 <span style="color:var(--green)">Top 2</span> \u2192 <span style="color:var(--lime)">Cuartos</span> \u2192 Semis \u2192 Final</div>';
+  var n={Open:'19 selecciones',Mixed:'14 selecciones',Women:'14 selecciones'};
+  var nGroups=GROUPS[div].length;
+  var advN=div==='Open'?2:4;
+  el.innerHTML='<div style="font-size:11px;color:var(--tx2);line-height:1.8">'+n[div]+' \u00b7 '+nGroups+' grupos (Round-Robin) \u2192 <span style="color:var(--green)">Top '+advN+'</span> \u2192 <span style="color:var(--lime)">Cuartos</span> \u2192 Semis \u2192 Final</div>';
 }
 window.savePicksToCloud=savePicksToCloud;window.doSavePicksToCloud=doSavePicksToCloud;
 window.closeSaveModal=closeSaveModal;window.saveRegInfo=saveRegInfo;
