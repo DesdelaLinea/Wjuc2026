@@ -1302,7 +1302,21 @@ window.addEventListener('DOMContentLoaded',()=>{
 function standings(grp,gst){
   const w={};grp.t.forEach((_,i)=>w[i]=0);
   gst.m.forEach(m=>{if(m.w!==null)w[m.w]++;});
-  return grp.t.map((t,i)=>({...t,i,w:w[i]})).sort((a,b)=>b.w-a.w||(a.s-b.s));
+  // Head-to-head lookup: beat[i+'-'+j] = true si i le ganó a j
+  const beat={};
+  gst.m.forEach(m=>{
+    if(m.w===null)return;
+    const loser=(m.w===m.a)?m.b:m.a;
+    beat[m.w+'-'+loser]=true;
+  });
+  return grp.t.map((t,i)=>({...t,i,w:w[i]})).sort((a,b)=>{
+    if(b.w!==a.w)return b.w-a.w;
+    // Empate en victorias → desempata por resultado directo entre los dos equipos empatados
+    if(beat[a.i+'-'+b.i])return -1;
+    if(beat[b.i+'-'+a.i])return 1;
+    // Sin resultado directo disponible (o empate no transitivo de 3+) → cae a seed como último recurso
+    return a.s-b.s;
+  });
 }
 
 // Resuelve un slot {g,r} de Power Pool a un objeto equipo {s,n,c} usando standings finales
@@ -1339,27 +1353,48 @@ function powerPoolStandings(interPool){
 
 function teamLabel(t){return fl(t.c)+' '+t.n;}
 
-// QF seeding:
-//  - Open (19 eq. → 4 grupos, top 3 c/u a 2 Power Pools de 6 → top 4 de cada Power Pool a QF): PP1-1vPP2-4 · PP2-2vPP1-3 · PP1-2vPP2-3 · PP2-1vPP1-4
-//  - Women/Mixed (2 grupos, top 4 c/u directo a QF): A1vB4 · B2vA3 · A2vB3 · B1vA4 (cross-pool, formato oficial WJUC 2026)
+// Cuartos de Final CONFIRMADOS oficialmente por WFDF (fase de grupos cerrada) — WJUC 2026
+// Fuente: bracket real publicado en wjuc.wfdf.sport, verificado partido a partido por el usuario (17 jul 2026)
+const QF_LOCKED = {
+  Women: [
+    ['ITA Italy','USA USA'],
+    ['CAN Canada','GBR Great Britain'],
+    ['JPN Japan','CZE Czech Republic'],
+    ['FRA France','BEL Belgium']
+  ],
+  Mixed: [
+    ['USA USA','COL Colombia'],
+    ['HUN Hungary','FRA France'],
+    ['CAN Canada',"CHN People's Republic of China"],
+    ['SUI Switzerland','AUS Australia']
+  ],
+  Open: [
+    ['CAN Canada','GER Germany'],
+    ['BEL Belgium','JPN Japan'],
+    ['ITA Italy','NZL New Zealand'],
+    ['USA USA','FRA France']
+  ]
+};
+
 function buildBkt(div,state){
   const br=state[div].bracket;
-  const nGroups=GROUPS[div].length;
   if(!br[0])return;
-  if(nGroups<=2){
-    // 2 grupos de 7 → top 4 de cada uno avanzan a Cuartos (8 equipos)
+  const nGroups=GROUPS[div].length;
+  let newA=[null,null,null,null], newB=[null,null,null,null];
+
+  if(QF_LOCKED[div]){
+    // Cuartos ya confirmados oficialmente: no se recalculan desde standings/Power Pools
+    QF_LOCKED[div].forEach((pair,i)=>{ newA[i]=pair[0]; newB[i]=pair[1]; });
+  } else if(nGroups<=2){
+    // Fallback proyectivo (grupo aún en juego): top 4 de cada grupo, cruzados
     const T=GROUPS[div].map((g,gi)=>{
       const st=standings(g,state[div].g[gi]);
       return[0,1,2,3].map(r=>st[r]?teamLabel(st[r]):null);
     });
     const A=T[0]||[null,null,null,null], B=T[1]||[null,null,null,null];
-    br[0].m[0].a=A[0];br[0].m[0].b=B[3];br[0].m[0].w=null; // QF1: A1 vs B4
-    br[0].m[1].a=B[1];br[0].m[1].b=A[2];br[0].m[1].w=null; // QF2: B2 vs A3
-    br[0].m[2].a=A[1];br[0].m[2].b=B[2];br[0].m[2].w=null; // QF3: A2 vs B3
-    br[0].m[3].a=B[0];br[0].m[3].b=A[3];br[0].m[3].w=null; // QF4: B1 vs A4
-    for(let r=1;r<br.length;r++)br[r].m.forEach(m=>{m.a=null;m.b=null;m.w=null;});
+    newA=[A[0],B[1],A[1],B[0]]; newB=[B[3],A[2],B[2],A[3]];
   } else {
-    // Open: 4 grupos iniciales → top 3 c/u a 2 Power Pools de 6 → top 4 de cada Power Pool avanza a Cuartos
+    // Fallback proyectivo Open: top 4 de cada Power Pool, cruzados
     buildOpenPowerPools(state);
     const pp1=state.Open.inter&&state.Open.inter[0];
     const pp2=state.Open.inter&&state.Open.inter[1];
@@ -1367,12 +1402,16 @@ function buildBkt(div,state){
     const st2=pp2?powerPoolStandings(pp2):[];
     const P1=[0,1,2,3].map(r=>st1[r]?teamLabel(st1[r]):null);
     const P2=[0,1,2,3].map(r=>st2[r]?teamLabel(st2[r]):null);
-    br[0].m[0].a=P1[0];br[0].m[0].b=P2[3];br[0].m[0].w=null; // QF1: PP1-1 vs PP2-4
-    br[0].m[1].a=P2[1];br[0].m[1].b=P1[2];br[0].m[1].w=null; // QF2: PP2-2 vs PP1-3
-    br[0].m[2].a=P1[1];br[0].m[2].b=P2[2];br[0].m[2].w=null; // QF3: PP1-2 vs PP2-3
-    br[0].m[3].a=P2[0];br[0].m[3].b=P1[3];br[0].m[3].w=null; // QF4: PP2-1 vs PP1-4
-    for(let r=1;r<br.length;r++)br[r].m.forEach(m=>{m.a=null;m.b=null;m.w=null;});
+    newA=[P1[0],P2[1],P1[1],P2[0]]; newB=[P2[3],P1[2],P2[2],P1[3]];
   }
+
+  // Solo se borra el ganador de un cruce si el equipo asignado realmente cambió
+  // (evita perder los picks de Semifinal/Final cada vez que se vuelve a renderizar)
+  br[0].m.forEach((m,i)=>{
+    if(m.a!==newA[i]||m.b!==newB[i]) m.w=null;
+    m.a=newA[i]; m.b=newB[i];
+  });
+  // Semifinal/Final NO se tocan aquí: se llenan vía propagateBkt cuando se marca un ganador.
 }
 function propagateBkt(br,ri,mi){
   const m=br[ri].m[mi];
@@ -1787,6 +1826,8 @@ async function tryLoadPicksFromCloud(name, silent){
     // Load picks
     if(d.p){
       myPicks = d.p;
+      // Repara estructura vieja (ej. bracket de 2 rondas de antes del fix) antes de usarla/renderizarla
+      if(typeof validateAndFixState==='function') validateAndFixState();
       lsSet('wj26_picks', myPicks);
     }
     // Load registration fields
@@ -2278,7 +2319,7 @@ function startFirestoreListeners(){
   fns.onSnapshot(fns.doc(window._db, 'juc_config', 'results'), function(snap){
     if(snap.exists()){
       var d = snap.data();
-      if(d.results){ results = d.results; lsSet('wj26_res', results); }
+      if(d.results){ results = d.results; if(typeof validateAndFixState==='function') validateAndFixState(); lsSet('wj26_res', results); }
       if(typeof d.published !== 'undefined'){ resultsPublished = d.published; lsSet('wj26_resPub', resultsPublished); }
       showResultsBanner();
       var lbPage = document.getElementById('page-lb');
@@ -2299,7 +2340,7 @@ async function loadResultsFromCloud(){
     var snap = await fns.getDoc(fns.doc(window._db, 'juc_config', 'results'));
     if(snap.exists()){
       var d = snap.data();
-      if(d.results){ results = d.results; lsSet('wj26_res', results); }
+      if(d.results){ results = d.results; if(typeof validateAndFixState==='function') validateAndFixState(); lsSet('wj26_res', results); }
       if(typeof d.published !== 'undefined'){ resultsPublished = d.published; lsSet('wj26_resPub', resultsPublished); }
     }
   }catch(e){ toast('⚠️ Error cargando resultados: '+e.message); }
